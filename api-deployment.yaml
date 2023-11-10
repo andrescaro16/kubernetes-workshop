@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-peliculas-deploy
+  labels:
+    app: api-peliculas
+    version: "1.0"
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: api-peliculas
+  template:
+    metadata:
+      labels:
+        app: api-peliculas
+        version: "1.0"
+    spec:
+      containers:
+      - name: kubernetes-workshop
+        image: andrescaro16/kubernetes-workshop:1.0
+        ports:
+          - name: api-server
+            containerPort: 5000
+        env:
+          - name: DATABASE_URI
+            value: postgresql://postgres:pass@db/postgres
