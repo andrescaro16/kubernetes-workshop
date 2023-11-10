@@ -4,3 +4,4 @@ flask_sqlalchemy>=2.0
 flask_migrate>=2.7.0
 flask_marshmallow>=0.14.0
 marshmallow-sqlalchemy>= 0.24.2
+psycopg2-binary

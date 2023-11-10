@@ -17,9 +17,9 @@ ENV FLASK_ENV "development"
 ENV APP_SETTINGS_MODULE "config.default"
 ENV PORT 5000
 # init bd and create schemas
-
-RUN flask db migrate
-RUN flask db upgrade
+# RUN flask db init
+# RUN flask db migrate
+# RUN flask db upgrade
 
 # expose port
 EXPOSE ${PORT}
